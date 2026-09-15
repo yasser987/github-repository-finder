@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="getRepos">
-      <form class="search">
-        <input type="text" placeholder="Enter A Github User Name" />
-        <button>Get Repos</button>
-      </form>
-      <div class="repos"></div>
-    </div>
-    <script src="main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search a GitHub username and explore their public repositories.">
+  <link rel="stylesheet" href="style.css">
+  <title>GitHub Repository Finder | JavaScript Project</title>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <p class="eyebrow">GitHub REST API</p>
+      <h1>Repository Finder</h1>
+      <p>Enter a GitHub username to browse their public repositories.</p>
+    </header>
+
+    <form class="search-form" novalidate>
+      <label class="sr-only" for="username">GitHub username</label>
+      <input id="username" name="username" type="text" placeholder="e.g. yasser987" autocomplete="off" spellcheck="false" required>
+      <button type="submit">Search</button>
+    </form>
+
+    <section class="results" aria-labelledby="results-title">
+      <div class="results__header">
+        <h2 id="results-title">Repositories</h2>
+        <span class="result-count"></span>
+      </div>
+      <p class="status" role="status" aria-live="polite">Search for a GitHub user to begin.</p>
+      <div class="repository-list"></div>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
 </html>
